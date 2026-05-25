@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="GanoApp.MainPage">
+
+    <ScrollView>
+
+        <VerticalStackLayout Padding="20" Spacing="15">
+
+            <Label Text="Dersler" FontSize="28" FontAttributes="Bold"/>
+
+            <CollectionView x:Name="courseList">
+
+                <CollectionView.ItemTemplate>
+
+                    <DataTemplate>
+
+                        <SwipeView>
+
+                            <SwipeView.RightItems>
+                                <SwipeItems>
+                                    <SwipeItem
+                                        Text="Sil"
+                                        BackgroundColor="Red"
+                                        CommandParameter="{Binding Id}"
+                                        Invoked="Delete_Clicked"/>
+                                </SwipeItems>
+                            </SwipeView.RightItems>
+
+                            <Frame Padding="10" Margin="0,5">
+
+                                <VerticalStackLayout Spacing="5">
+
+                                    <Label Text="{Binding CourseName}" FontAttributes="Bold"/>
+                                    <Label Text="{Binding CourseCode}"/>
+
+                                    <Label Text="{Binding Midterm, StringFormat='Vize: {0}'}"/>
+                                    <Label Text="{Binding Final, StringFormat='Final: {0}'}"/>
+
+                                    <Label Text="{Binding Average, StringFormat='Ortalama: {0:F2}'}"/>
+                                    <Label Text="{Binding LetterGrade, StringFormat='Harf: {0}'}"/>
+                                    <Label Text="{Binding AKTS, StringFormat='AKTS: {0}'}"/>
+
+                                    <Label Text="{Binding IncludedInAverage, StringFormat='GANO dahil: {0}'}"/>
+
+                                </VerticalStackLayout>
+
+                            </Frame>
+
+                        </SwipeView>
+
+                    </DataTemplate>
+
+                </CollectionView.ItemTemplate>
+
+            </CollectionView>
+
+            <Label x:Name="lblGano"
+                   FontSize="24"
+                   FontAttributes="Bold"
+                   TextColor="Red"/>
+
+            <Button Text="Ders Ekle"
+                    Clicked="Button_Clicked"/>
+
+        </VerticalStackLayout>
+
+    </ScrollView>
+
+</ContentPage>

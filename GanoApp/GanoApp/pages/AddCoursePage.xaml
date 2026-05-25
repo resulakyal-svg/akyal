@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="GanoApp.Pages.AddCoursePage">
+
+    <ScrollView>
+
+        <VerticalStackLayout Padding="20" Spacing="12">
+
+            <Entry x:Name="txtCode" Placeholder="Ders Kodu"/>
+            <Entry x:Name="txtName" Placeholder="Ders Adı"/>
+
+            <Entry x:Name="txtHour" Placeholder="Haftalık Saat" Keyboard="Numeric"/>
+            <Entry x:Name="txtAKTS" Placeholder="AKTS" Keyboard="Numeric"/>
+
+            <Entry x:Name="txtMidterm" Placeholder="Vize Notu" Keyboard="Numeric"/>
+            <Entry x:Name="txtFinal" Placeholder="Final Notu" Keyboard="Numeric"/>
+
+            <Entry x:Name="txtSemester" Placeholder="Dönem"/>
+
+            <HorizontalStackLayout Spacing="10">
+
+                <Label Text="Ortalamaya katılsın mı?" VerticalOptions="Center"/>
+
+                <Switch x:Name="switchInclude"/>
+
+            </HorizontalStackLayout>
+
+            <Button Text="Kaydet" Clicked="Button_Clicked"/>
+
+        </VerticalStackLayout>
+
+    </ScrollView>
+
+</ContentPage>
